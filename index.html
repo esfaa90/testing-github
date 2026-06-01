@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 25%;
+      }
+    </style>
+
+    <script>
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+      const buttonClick = async () => {
+        const button = document.getElementById("myButton");
+        button.style.backgroundColor = "blue";
+        await wait(1000);
+        button.style.backgroundColor = "white";
+      };
+    </script>
   </head>
   <body>
-    <h1>Hello, World!</h1>
-    <p>Hello This is my Website</p>
+    <button onclick="buttonClick()" id="myButton">Click Me!</button>
   </body>
 </html>
